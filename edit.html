@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<title>Bootstrap Handson-4</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+.material-icons {
+vertical-align: middle;
+
+}
+</style>    
+<script>
+function submitform(){  
+  var item = document.getElementById("ItemName").value;
+
+  var price = document.getElementById("Price").value;
+
+
+var date = document.getElementById("datetimepicker").value;
+
+
+var e = document.getElementById("category");
+var categ = e.options[e.selectedIndex].value;
+
+
+var ele = document.getElementsByName("active"); 
+
+ 
+    var val=null;
+    
+    for (var i=0, len=ele.length; i<len; i++) {
+        if ( ele[i].checked ) { 
+            val = ele[i].value;
+            break; 
+        }
+    }
+
+var del= document.getElementById("delivery").checked;
+
+
+
+}
+
+</script>
+
+
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <a class="navbar-brand" href="#"><i class="material-icons" style="color:white;size:100px;">movie</i></a><h3 style="color:white;">Movies Rimjhim
+</h3>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#"><h5>Admin</h5></a>
+      </li>
+   <li class="nav-item">
+        <a class="nav-link" href="#">Available</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Cart</a>
+      </li>  
+    </ul>
+  </div>  
+</div>
+</nav>
+
+
+<form style="margin:5%;" name="myform" onsubmit="submitform()"  action="edit-menu-item-succes.html"method="get">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="ItemName">Movie Name</label>
+      <input type="text" class="form-control" id="ItemName" >
+    </div>
+<div class="form-group col-md-6">
+      <label for="ItemName">Rating</label>
+      <input type="text" class="form-control" id="ItemName" >
+    </div>
+   </div>
+
+ <div class="form-row">
+
+<div class="form-group col-md-3">
+     <label for="Price">Price</label>
+      <input type="text" class="form-control" id="Price" > 
+    </div>
+
+
+    <div class="form-group col-md-3">
+      <label for="datetimepicker">Date of Launch</label>
+      <input type="text"  class="form-control" id="datetimepicker">
+ 
+    </div>
+<div class="form-group col-md-3">
+     <label for="category">Genere</label>
+      <select id="category" class="form-control">
+        <option selected value="Main Course">Action</option>
+        <option value="Starter">Thriller</option>
+        <option value="Desert">Science</option>
+        <option value="Italian">Fantasy</option>
+<option value="Italian">Horror</option>
+<option value="Italian">Romance</option>
+        </select>
+    </div>
+  
+<div class="form-group col-md-3">
+      <label for="active">Active</label><br>
+      <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="active" id="yes" value="YES">
+  <label class="form-check-label" for="yes">Yes</label>
+       </div>
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" name="active" id="no" value="NO">
+  <label class="form-check-label" for="no">No</label>
+     </div>
+  </div>
+</div>
+
+<div class="form-row">
+<div class="form-group col-md-3">
+      <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="delivery"><label class="form-check-label" for="delivery">Free Avilable</label>
+    </div>
+    </div>
+</div>
+<br>
+<input type="submit" class="btn btn-success " value="save" >
+
+</form>
+<script>
+
+$('#datetimepicker').datepicker({
+
+        uiLibrary: 'bootstrap4',
+
+format: 'dd/mm/yyyy'
+
+});</script>
+</body>
+</html>
